@@ -76,7 +76,7 @@ public class ArticulosServiceImpl implements ArticulosService {
             String archivo = imagen.getOriginalFilename();
             nombreArchivo = UUID.randomUUID() + "_" + (archivo != null ? archivo : "file");
 
-            Path carpeta = Paths.get("C:\\Users\\senen\\Documents\\Mi Portafolio\\Proyectos Spring Boot\\Marketplace\\Imagenes");
+            Path carpeta = Paths.get("C:\\Users\\senen\\Documents\\ExamenTecnico\\Imagenes");
             //Comprobación de la ruta
             if (!Files.exists(carpeta)) {
                 Files.createDirectories(carpeta);
@@ -115,8 +115,8 @@ public class ArticulosServiceImpl implements ArticulosService {
             }
             String archivo = imagen.getOriginalFilename();
             nombreArchivo = UUID.randomUUID() + "_" + (archivo != null ? archivo : "file");
-
-            Path carpeta = Paths.get("C:\\Users\\senen\\Documents\\Mi Portafolio\\Proyectos Spring Boot\\Marketplace\\Imagenes");
+            //C:\Users\senen\Documents\ExamenTecnico\Imagenes
+            Path carpeta = Paths.get("C:\\Users\\senen\\Documents\\ExamenTecnico\\Imagenes");
             //Comprobación de la ruta
             if (!Files.exists(carpeta)) {
                 Files.createDirectories(carpeta);
