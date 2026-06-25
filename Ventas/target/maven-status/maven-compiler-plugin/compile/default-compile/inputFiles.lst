@@ -1,0 +1,13 @@
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\controller\VentasController.java
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\DTO\CompradoresDTO.java
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\DTO\CrearVentaDTO.java
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\DTO\TotalDTO.java
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\DTO\VentasUsuarioDTO.java
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\entities\Ventas.java
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\exception\DatabaseOperationException.java
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\exception\GlobalExceptionHandler.java
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\repository\VentasRepository.java
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\response\ApiResponse.java
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\service\impl\VentasServiceImpl.java
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\service\VentasService.java
+C:\Users\senen\Documents\ExamenTecnico\Ventas\src\main\java\com\senen\ventas\VentasApplication.java

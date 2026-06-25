@@ -1,0 +1,16 @@
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\ArticulosApplication.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\controller\ArticulosController.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\DTO\ArticulosCategoriaDTO.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\DTO\ArticulosDTO.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\DTO\ArticulosUsuariosDTO.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\DTO\InsertarArticulosDTO.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\DTO\ModificarArticulo1DTO.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\DTO\ModificarArticulo2DTO.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\entities\Articulos.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\exception\DatabaseOperationException.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\exception\GlobalExceptionHandler.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\repository\ArticulosRepository.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\response\ApiResponse.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\service\ArticulosService.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\service\impl\ArticulosServiceImpl.java
+C:\Users\senen\Documents\ExamenTecnico\Articulos\src\main\java\com\senen\articulos\webconfig\WebConfig.java

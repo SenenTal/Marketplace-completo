@@ -1,0 +1,16 @@
+com\senen\articulos\DTO\ArticulosDTO.class
+com\senen\articulos\exception\DatabaseOperationException.class
+com\senen\articulos\DTO\ModificarArticulo1DTO.class
+com\senen\articulos\DTO\ArticulosUsuariosDTO.class
+com\senen\articulos\service\impl\ArticulosServiceImpl.class
+com\senen\articulos\ArticulosApplication.class
+com\senen\articulos\DTO\InsertarArticulosDTO.class
+com\senen\articulos\service\ArticulosService.class
+com\senen\articulos\DTO\ModificarArticulo2DTO.class
+com\senen\articulos\response\ApiResponse.class
+com\senen\articulos\DTO\ArticulosCategoriaDTO.class
+com\senen\articulos\repository\ArticulosRepository.class
+com\senen\articulos\webconfig\WebConfig.class
+com\senen\articulos\controller\ArticulosController.class
+com\senen\articulos\exception\GlobalExceptionHandler.class
+com\senen\articulos\entities\Articulos.class

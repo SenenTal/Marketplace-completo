@@ -1,0 +1,13 @@
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\controller\UsuariosController.java
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\dto\AccesoDTO.java
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\dto\UserAccessDTO.java
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\dto\UserAdminDTO.java
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\dto\UserDTO.java
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\entities\Usuarios.java
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\exception\DatabaseOperationException.java
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\exception\GlobalExceptionHandler.java
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\repository\UsuariosRepository.java
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\response\ApiResponse.java
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\service\impl\UsuarioServiceImpl.java
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\service\UsuariosService.java
+C:\Users\senen\Documents\ExamenTecnico\Usuarios\src\main\java\com\senen\usuarios\UsuariosApplication.java
