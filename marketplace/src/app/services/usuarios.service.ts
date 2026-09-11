@@ -6,6 +6,7 @@ import { Usuarios } from '../models/usuarios/usuarios.model';
 import { UserDTO } from '../models/usuarios/usuario.dto';
 import { UserAccessDTO } from '../models/usuarios/usuario-access.dto';
 import { UserAdminDTO } from '../models/usuarios/usuarios-admin.dto';
+import { User1DTO } from '../models/usuarios/usuario1.dto'
 
 @Injectable({
   providedIn: 'root'
@@ -50,5 +51,9 @@ export class UsuariosService {
 
   validarCredenciales(usuario: UserAccessDTO, id: number):Observable<ApiResponse<Boolean>>{
     return this.http.post<ApiResponse<Boolean>>(`${this.url}/validar/${id}`, usuario);
+  }
+
+  recargarDineroElectronico(id: number, dinero: number):Observable<ApiResponse<number>>{
+    return this.http.put<ApiResponse<number>>(`${this.url}/recargar/${id}/${dinero}`, null);
   }
 }

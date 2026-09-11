@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { UsuariosService } from '../../services/usuarios.service';
+import {Component} from '@angular/core';
+import {UsuariosService} from '../../services/usuarios.service';
 import Swal from 'sweetalert2';
-import { UserDTO } from '../../models/usuarios/usuario.dto';
-import { Router } from '@angular/router';
+import {UserDTO} from '../../models/usuarios/usuario.dto';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-user',
@@ -15,17 +15,20 @@ export class CreateUserComponent {
   user: UserDTO = {
     usuario: '',
     password: '',
-    nickname: ''
+    nickname: '',
+    ubicacion: ''
   }
 
-  constructor(private service: UsuariosService,
+  constructor(
+    private service: UsuariosService,
     private router: Router
-  ) { }
+  ) {
+  }
 
   crearUsuario() {
     if (!this.user.usuario ||
       !this.user.nickname ||
-      !this.user.password) {
+      !this.user.password || !this.user.ubicacion) {
       Swal.fire('Error', 'Falta por rellenar los campos', 'info');
     } else if (this.user.password.length <= 4) {
       Swal.fire('info', 'Contraseña pequeña, escriba mas de 4 caracteres', 'info');
@@ -33,6 +36,8 @@ export class CreateUserComponent {
       Swal.fire('info', 'Nombre de usuario corto, escriba mas de 4 caracteres', 'info');
     } else if (this.user.nickname.length <= 3) {
       Swal.fire('info', 'Apodo corto, escriba mas de 3 caracteres', 'info');
+    } else if (!this.user.ubicacion) {
+      Swal.fire('info', 'Agrega tu ubicación', 'info');
     } else {
       this.service.crearUsuario(this.user).subscribe(
         {

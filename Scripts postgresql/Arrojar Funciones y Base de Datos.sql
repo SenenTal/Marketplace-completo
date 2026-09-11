@@ -6,6 +6,7 @@ DROP FUNCTION fn_obtener_ganancias_usuario(BIGINT);
 DROP FUNCTION fn_obtener_ventas_usuario(BIGINT);
 DROP FUNCTION fn_verificar_venta(BIGINT);
 
+
 --Usuarios:
 DROP FUNCTION fn_hacer_admin(VARCHAR);
 DROP PROCEDURE sp_borrar_usuario(BIGINT);
@@ -14,9 +15,10 @@ DROP FUNCTION fn_llamar_usuarios();
 DROP FUNCTION fn_crear_usuario(VARCHAR, VARCHAR, VARCHAR);
 DROP PROCEDURE sp_delete_usuario(INTEGER);
 DROP FUNCTION fn_iniciar_sesion(VARCHAR, VARCHAR);
-DROP FUNCTION fn_update_usuario(BIGINT, VARCHAR, VARCHAR, VARCHAR);
+DROP FUNCTION fn_update_usuario(BIGINT, VARCHAR, VARCHAR, VARCHAR, VARCHAR);
 DROP FUNCTION fn_hacer_user(VARCHAR);
 DROP FUNCTION fn_validar_credenciales(BIGINT, VARCHAR, VARCHAR);
+DROP FUNCTION fn_recargar_dinero(BIGINT, REAL);
 
 --Articulos:
 DROP FUNCTION fn_crear_articulo(VARCHAR, VARCHAR, REAL, VARCHAR, VARCHAR, VARCHAR, BIGINT);
@@ -33,8 +35,16 @@ VARCHAR, TIMESTAMP, VARCHAR);
 DROP FUNCTION fn_listar_articulos_usuarios();
 DROP FUNCTION fn_listar_articulos_vendidos();
 DROP FUNCTION fn_listar_articulos_vendidos_id(BIGINT);
+DROP FUNCTION fn_compras_usuario(BIGINT);
+DROP FUNCTION fn_asignar_ubicacion(BIGINT);
+DROP FUNCTION fn_obtener_nombre_imagen(BIGINT);
 
 --Arrojar las 3 bases de datos:
 DROP TABLE articulos;
 DROP TABLE usuarios;
 DROP TABLE ventas;
+
+--Truncar las bases de datos
+TRUNCATE TABLE articulos CASCADE;
+TRUNCATE TABLE ventas CASCADE;
+TRUNCATE TABLE usuarios;

@@ -14,7 +14,8 @@
                             <label class="form-label">
                                 Imagen del artículo
                             </label>
-                            <input type="file" class="form-control" accept="image/*" (change)="onFileSelected($event)">
+                            <input #inputImagen
+                              type="file" class="form-control" accept="image/*" (change)="onFileSelected($event)">
                         </div>
                         <!-- Preview imagen -->
 
@@ -63,7 +64,8 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label"> Ubicación</label>
-                            <select class="form-select" [(ngModel)]="articuloU.ubicacion">
+                          <input class="form-control "type="text" [(ngModel)]="articuloU.ubicacion" disabled>
+                            <!--<select class="form-select" [(ngModel)]="articuloU.ubicacion">
                                 <option value="Culiacan, Sinaloa">Culiacan, Sinaloa</option>
                                 <option value="Mazatlan, Sinaloa">Mazatlan, Sinaloa</option>
                                 <option value="Guamuchil, Sinaloa">Guamuchil, Sinaloa</option>
@@ -71,10 +73,10 @@
                                 <option value="Los Mochis, Sinaloa">Los Mochis, Sinaloa</option>
                                 <option value="Angostura, Sinaloa">Angostura, Sinaloa</option>
                                 <option value="Pericos, Sinaloa">Pericos, Sinaloa</option>
-                            </select>
+                            </select>-->
                         </div>
                         <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" 
+                            <input class="form-check-input" type="checkbox"
                             [checked]="estadoDisponible"
                             (change)="cambiarEstado($event)">
                             <label class="form-check-label">Disponible</label>
@@ -86,3 +88,4 @@
             </div>
         </div>
     </div>
+</div>

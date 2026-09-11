@@ -1,3 +1,11 @@
+--Crear Usuarios
+CREATE TABLE usuarios(
+	id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	usuario VARCHAR(255),
+	nickname VARCHAR(255),
+	contrasena VARCHAR(255),
+	role VARCHAR(255) NOT NULL
+);
 --Crear Articulos
 CREATE TABLE articulos(
 	id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -14,14 +22,6 @@ CREATE TABLE articulos(
     FOREIGN KEY(id_usuario)
     REFERENCES usuarios(id)
     ON DELETE CASCADE
-);
---Crear Usuarios
-CREATE TABLE usuarios(
-	id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-	usuario VARCHAR(255),
-	nickname VARCHAR(255),
-	contrasena VARCHAR(255),
-	role VARCHAR(255) NOT NULL
 );
 --Crear Ventas
 CREATE TABLE ventas(

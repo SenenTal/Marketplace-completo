@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ArticuloService } from '../../services/articulo.service';
-import { ArticulosCategoriaDTO } from '../../models/articulos/articulos-categoria.dto';
+import {Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ArticuloService} from '../../services/articulo.service';
+import {ArticulosCategoriaDTO} from '../../models/articulos/articulos-categoria.dto';
 import Swal from 'sweetalert2';
-import { AuthService } from '../../services/auth.service';
-import { VentasService } from '../../services/ventas.service';
-import { ArticulosDTO } from '../../models/articulos/articulos.dto';
+import {AuthService} from '../../services/auth.service';
+import {VentasService} from '../../services/ventas.service';
+import {ArticulosDTO} from '../../models/articulos/articulos.dto';
 
 @Component({
   selector: 'app-articles-detail',
   standalone: false,
   templateUrl: './articles-detail.component.html',
-  styleUrl: './articles-detail.component.css'
+  styleUrl: './articles-detail.component.css',
+  changeDetection: ChangeDetectionStrategy.Eager
 })
 export class ArticlesDetailComponent implements OnInit {
   idUsuario!: number;
@@ -34,12 +35,15 @@ export class ArticlesDetailComponent implements OnInit {
   imagen: string = '';
   esPropietario: boolean = false;
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private articuloService: ArticuloService,
     private ventasService: VentasService,
     private router: Router,
-    private auth: AuthService
-  ) { }
+    private auth: AuthService,
+    private cdr: ChangeDetectorRef
+  ) {
+  }
 
   ngOnInit(): void {
     this.auth.sesion$.subscribe(valor => {
@@ -51,6 +55,7 @@ export class ArticlesDetailComponent implements OnInit {
       this.llamarArticulo();
     });
   }
+
   //Llamar el articulo por Id
   llamarArticulo() {
     this.articuloService.articuloPorId(this.idArticulo).subscribe({
@@ -59,7 +64,8 @@ export class ArticlesDetailComponent implements OnInit {
         this.imagen = `${this.imageUrl}/${this.articulo.imagen}`
         //Comparar si el id del usuario es igual a id_usuario de articulo
         this.esPropietario = this.articulo.idUsuario === this.idUsuario;
-        console.log(`${this.articulo}`);
+        console.log(`${this.articulo.titulo}`);
+        this.cdr.markForCheck();
       }, error: (error) => {
         Swal.fire(
           'Fallo de conexión',
@@ -69,6 +75,7 @@ export class ArticlesDetailComponent implements OnInit {
       }
     })
   }
+
   //Para comprar producto
   comprarProducto() {
     if (!this.idUsuario) {

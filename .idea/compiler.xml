@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Ventas" />
+        <module name="Usuarios" />
+        <module name="Articulos" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Backend (1) (com.Senen.Marketplace)" target="21" />
+      <module name="Marketplace" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Articulos" options="" />
+      <module name="Backend" options="" />
+      <module name="Usuarios" options="" />
+      <module name="Ventas" options="" />
+    </option>
+  </component>
+</project>

@@ -60,7 +60,7 @@ BEGIN
 	RETURN QUERY
 	SELECT a.id, a.titulo, a.descripcion, a.precio, a.categoria, a.estado_articulo, a.ubicacion,
 	a.fecha_publicacion, a.imagen
-	FROM articulos a WHERE a.id_usuario = p_id;
+	FROM articulos a WHERE a.id_usuario = p_id ORDER BY a.id ASC;
 END;
 $$;
 
@@ -245,7 +245,8 @@ $$;
 
 --Funciones Almacenadas para Usuarios:
 --Procedimiento Almacenado para crear un usuario, en role agrega por defecto 'user'
-CREATE OR REPLACE FUNCTION fn_crear_usuario(p_user VARCHAR, p_nickname VARCHAR, p_password VARCHAR)
+CREATE OR REPLACE FUNCTION fn_crear_usuario(p_user VARCHAR, p_nickname VARCHAR, p_password VARCHAR,
+p_ubicacion VARCHAR)
 RETURNS TABLE(id BIGINT, usuario VARCHAR, nickname VARCHAR, contrasena VARCHAR, role VARCHAR)
 LANGUAGE 'plpgsql'
 AS
@@ -258,7 +259,8 @@ BEGIN
 	/*Insertar usuario*/
 	IF NOT EXISTS(SELECT 1 FROM usuarios u WHERE u.usuario = p_user)
 	THEN
-	INSERT INTO usuarios(usuario, nickname, contrasena, role) VALUES(p_user, p_nickname, p_password, 'user');
+	INSERT INTO usuarios(usuario, nickname, contrasena, role, dinero_electronico, ubicacion) 
+	VALUES(p_user::VARCHAR, p_nickname::VARCHAR, p_password::VARCHAR, 'user', 0::REAL, p_ubicacion::VARCHAR);
 	RETURN QUERY 
 	SELECT u.id, u.usuario, u.nickname, u.contrasena, u.role FROM usuarios u WHERE u.usuario = p_user;
 	END IF;
@@ -294,13 +296,15 @@ $$;
 
 --Crear función almacenada fn_llamar_usuarios()
 CREATE OR REPLACE FUNCTION fn_llamar_usuarios()
-RETURNS TABLE(id BIGINT, usuario VARCHAR, nickname VARCHAR, contrasena VARCHAR, role VARCHAR)
+RETURNS TABLE(id BIGINT, usuario VARCHAR, nickname VARCHAR, contrasena VARCHAR, role VARCHAR, 
+dinero_electronico REAL, ubicacion VARCHAR)
 LANGUAGE 'plpgsql'
 AS
 $$
 BEGIN
 	RETURN QUERY
-	SELECT u.id, u.usuario, u.nickname, u.contrasena, u.role FROM usuarios u ORDER BY u.id ASC;
+	SELECT u.id, u.usuario, u.nickname, u.contrasena, u.role, u.dinero_electronico,
+	u.ubicacion FROM usuarios u ORDER BY u.id ASC;
 END;
 $$;
 
@@ -323,7 +327,8 @@ $$;
 
 --Crear función alamcenada: fn_obtener_usuario_por_id()
 CREATE OR REPLACE FUNCTION fn_obtener_usuario_por_id(p_id BIGINT)
-RETURNS TABLE(id BIGINT, usuario VARCHAR, nickname VARCHAR, contrasena VARCHAR, role VARCHAR)
+RETURNS TABLE(id BIGINT, usuario VARCHAR, nickname VARCHAR, contrasena VARCHAR, role VARCHAR, 
+dinero_electronico REAL, ubicacion VARCHAR)
 LANGUAGE 'plpgsql'
 AS
 $$
@@ -333,8 +338,8 @@ BEGIN
 	THEN RAISE EXCEPTION 'No existe el usuario' USING ERRCODE = 'P0001';
 	END IF;
 	RETURN QUERY
-	SELECT u.id, u.usuario, u.nickname, u.contrasena, u.role FROM usuarios u 
-	WHERE u.id = p_id;
+	SELECT u.id, u.usuario, u.nickname, u.contrasena, u.role, u.dinero_electronico, 
+	u.ubicacion FROM usuarios u WHERE u.id = p_id;
 END;
 $$;
 
@@ -382,18 +387,33 @@ $$;
 
 --Función para actualizar datos del usuario
 CREATE OR REPLACE FUNCTION fn_update_usuario(p_id BIGINT, p_user VARCHAR, p_password VARCHAR, 
-p_nickname VARCHAR)
+p_nickname VARCHAR, p_ubicacion VARCHAR)
 RETURNS TABLE(id BIGINT, usuario VARCHAR, nickname VARCHAR, contrasena VARCHAR, role VARCHAR)
 LANGUAGE 'plpgsql'
 AS
 $$
 DECLARE
 BEGIN 
-	--Realizar los cambios y devolver una tabla
-	UPDATE usuarios u SET usuario = p_user, nickname = p_nickname, contrasena = p_password
-	WHERE u.id = p_id;
+	--Verificar la existencia del usuario por id de usuario
+	IF NOT EXISTS(SELECT 1 FROM usuarios u WHERE u.id = p_id)
+	THEN RAISE EXCEPTION '' USING ERRCODE = 'P0001';
+	END IF;
+	--Si existe el usuario
+	IF EXISTS(SELECT 1 FROM usuarios u WHERE u.id = p_id)
+	THEN 
+	--Realizar los cambios en usuario
+	UPDATE usuarios u SET usuario = p_user, nickname = p_nickname, contrasena = p_password,
+	ubicacion = p_ubicacion WHERE u.id = p_id;
+	--Buscar los articulos del usuario
+	IF EXISTS(SELECT 1 FROM articulos a WHERE a.id_usuario = p_id)
+	THEN
+	--Realizar los cambios en articulos del usuario, selecionando el id_usuario de articulo
+	UPDATE articulos a SET ubicacion = p_ubicacion WHERE a.id_usuario = p_id;
+	END IF;
+	--Devolver la una tabla
 	RETURN QUERY
 	SELECT u.id, u.usuario, u.nickname, u.contrasena, u.role FROM usuarios u WHERE u.id = p_id;
+	END IF;
 END;
 $$;
 
@@ -521,9 +541,10 @@ BEGIN
 	END IF;
 	
 	RETURN QUERY
-	SELECT u.nickname, COALESCE(SUM(v.cantidad), 0) AS total
-	FROM usuarios u JOIN articulos a ON a.id_usuario = u.id
-	JOIN ventas v ON v.articulo_id = a.id
+	SELECT u.nickname, COALESCE(SUM( CASE WHEN v.articulo_id IS NOT NULL
+	THEN a.precio ELSE 0 END), 0)::REAL AS total
+	FROM usuarios u LEFT JOIN articulos a ON a.id_usuario = u.id
+	LEFT JOIN ventas v ON v.articulo_id = a.id
 	WHERE u.id = p_id_usuario GROUP BY u.nickname;
 END;
 $$;
@@ -576,3 +597,82 @@ BEGIN
 	END IF;
 END;
 $$;
+
+--Procedimiento Almacenado fn_compras_usuario() para mostrar los articulos comprados por el usuario. 
+--Lo busca por el id de usuario
+CREATE OR REPLACE FUNCTION fn_compras_usuario(p_id BIGINT)
+RETURNS TABLE(titulo VARCHAR, descripcion VARCHAR, precio REAL, fecha TIMESTAMP, imagen VARCHAR)
+LANGUAGE 'plpgsql'
+AS
+$$
+BEGIN 
+	RETURN QUERY
+	SELECT a.titulo, a.descripcion, a.precio, v.fecha_venta, a.imagen
+	FROM ventas v LEFT JOIN usuarios u ON u.id = v.comprador_id
+	LEFT JOIN articulos a ON v.articulo_id = a.id
+	WHERE v.comprador_id = p_id;
+END;
+$$;
+
+--Procedimiento Almacenado fn_asignar_ubicacion() para asignar la ubicacion del usuario para 
+--las ubicaciones de los articulos del usuario
+CREATE OR REPLACE FUNCTION fn_asignar_ubicacion(p_id BIGINT)
+RETURNS TABLE (u_id BIGINT, usuario VARCHAR, usuario_ubicacion VARCHAR, a_id BIGINT, 
+nombre_articulo VARCHAR, ubicacion_articulo VARCHAR)
+LANGUAGE 'plpgsql'
+AS
+$$
+DECLARE
+	u_ubicacion VARCHAR;
+	a_id BIGINT;
+BEGIN 
+	SELECT u.ubicacion, a.id INTO u_ubicacion, a_id FROM usuarios u 
+	LEFT JOIN articulos a ON a.id_usuario = u.id WHERE u.id = p_id;
+	UPDATE articulos a SET ubicacion = u_ubicacion WHERE a.id = a_id;
+	RETURN QUERY
+	SELECT u.id, u.usuario, u.ubicacion, a.id, a.titulo, a.ubicacion
+	FROM usuarios u LEFT JOIN articulos a ON a.id_usuario = u.id
+	WHERE u.id = p_id;
+END;
+$$;
+
+--Procedimiento almacenado para obtener el nommbre de la imagen por
+--articulo id
+CREATE OR REPLACE FUNCTION fn_obtener_nombre_imagen(p_id BIGINT)
+RETURNS TABLE(imagen VARCHAR)
+LANGUAGE 'plpgsql'
+AS
+$$
+BEGIN 
+	IF NOT EXISTS(SELECT 1 FROM articulos a WHERE a.id = p_id)
+	THEN RAISE EXCEPTION 'No existe este articulo' USING ERRCODE = 'P0001';
+	END IF;
+	IF EXISTS(SELECT 1 FROM articulos a WHERE a.id = p_id)
+	THEN RETURN QUERY
+	SELECT a.imagen FROM articulos a WHERE a.id = p_id;
+	END IF;
+END;
+$$;
+
+--Procedimiento almacenado para recargar dinero electronico
+CREATE OR REPLACE FUNCTION fn_recargar_dinero(p_id BIGINT, p_dinero REAL)
+RETURNS TABLE(dinero_electronico REAL)
+LANGUAGE 'plpgsql'
+AS
+$$
+BEGIN
+	--Verificar la existencia del usuario por id
+	IF NOT EXISTS(SELECT 1 FROM usuarios u WHERE u.id = p_id)
+	THEN RAISE EXCEPTION 'No existe el usuario' USING ERRCODE = 'P0001';
+	END IF;
+	--Si existe, recarga la cantidad de dinero_electronico
+	IF EXISTS(SELECT 1 FROM usuarios u WHERE u.id = p_id)
+	THEN UPDATE usuarios u SET dinero_electronico = (u.dinero_electronico + p_dinero)
+	WHERE u.id = p_id;
+	RETURN QUERY
+	SELECT u.dinero_electronico FROM usuarios u WHERE u.id = p_id;
+	END IF;
+END;
+$$;
+
+SELECT * FROM usuarios u ORDER BY u.id ASC;

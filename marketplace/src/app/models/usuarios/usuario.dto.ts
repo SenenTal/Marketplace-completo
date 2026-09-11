@@ -1,5 +1,6 @@
 export interface UserDTO{
-    usuario: string;
-    password: string;
-    nickname: string;
+    usuario: String;
+    password: String;
+    nickname: String;
+    ubicacion: String;
 }

@@ -1,11 +1,11 @@
 <app-session />
-<div class="d-flex justify-content-start mb-3"><button class="btn btn-outline-secondary" routerLink="/articulos">Volver a Articulos</button></div>
+<div class="d-flex justify-content-left mb-3 px-5 py-2"><button class="btn btn-outline-secondary px-3 py-2" routerLink="/articulos">Volver a Articulos</button></div>
 <div class="container mt-4" *ngIf="articulo">
   <div class="card shadow">
     <div class="row g-0">
       <!-- Imagen -->
       <div class="col-md-6 d-flex align-items-center justify-content-center">
-        <img 
+        <img
           [src]="imagen"
           class="img-fluid p-4"
           style="max-height: 500px; object-fit: contain;">
@@ -34,7 +34,7 @@
           <!-- Estado -->
           <div>
             <strong>Estado:</strong>
-            <span 
+            <span
               class="badge"
               [class.bg-success]="articulo.estadoArticulo"
               [class.bg-danger]="!articulo.estadoArticulo">
@@ -52,7 +52,7 @@
           </small>
           <br>
           <div *ngIf="sesion && !esPropietario">
-          <button 
+          <button
             class="btn btn-primary mt-4"
             (click)="comprarProducto()">
             Comprar

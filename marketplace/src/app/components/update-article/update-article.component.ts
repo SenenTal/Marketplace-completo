@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticuloService } from '../../services/articulo.service';
 import { ArticulosCategoriaDTO } from '../../models/articulos/articulos-categoria.dto';
 import Swal from 'sweetalert2';
 import { ModificarArticulo1DTO } from '../../models/articulos/modificar-articulo1.dto';
 import { AuthService } from '../../services/auth.service';
+import {ViewChild, ElementRef} from '@angular/core'
 
 @Component({
   selector: 'app-update-article',
@@ -13,7 +14,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './update-article.component.css'
 })
 export class UpdateArticleComponent implements OnInit {
-
+  @ViewChild('inputImagen') inputImagen!: ElementRef<HTMLInputElement>;
   imagenFile: File | null = null;
   imagenPreview: string = '';
   idArticulo!: number;
@@ -48,7 +49,7 @@ estadoDisponible: boolean = false;
     private route: ActivatedRoute,
     private service: ArticuloService,
     private router: Router,
-    private auth: AuthService
+    private auth: AuthService, private cdr: ChangeDetectorRef
   ) { }
 
 
@@ -96,6 +97,7 @@ estadoDisponible: boolean = false;
             ubicacion: this.articulo.ubicacion
           };
           this.estadoDisponible = this.articulo.estadoArticulo;
+          this.cdr.markForCheck();
         },
         error: (error) => {
           Swal.fire(
@@ -111,7 +113,7 @@ estadoDisponible: boolean = false;
 
   actualizarArticulo() {
     console.log("DTO:", this.articuloU);
-    console.log("Imagen:", this.imagenFile);
+    console.log("Imagen:", this.imagenPreview);
     this.articuloU.idUsuario = this.idUsuario;
     if (!this.imagenFile || this.imagenFile === undefined) {
       this.service.actualizarArticulo1(
@@ -122,7 +124,7 @@ estadoDisponible: boolean = false;
           next: (resp) => {
             Swal.fire(
               'Modificado',
-              resp.data.titulo,
+              this.articuloU.titulo,
               'success'
             );
             this.irAOpciones();
@@ -132,6 +134,7 @@ estadoDisponible: boolean = false;
         });
     } else {
       console.log(this.articuloU);
+      console.log(this.imagenFile);
       this.service.actualizarArticulo2(
         this.idArticulo,
         this.articuloU,
@@ -141,7 +144,7 @@ estadoDisponible: boolean = false;
           next: (resp) => {
             Swal.fire(
               'Modificación con éxito',
-              `Se modificó: ${resp.data.titulo}`,
+              `Se modificó: ${this.articulo.titulo}`,
               'success'
             );
             this.irAOpciones();
@@ -172,6 +175,8 @@ estadoDisponible: boolean = false;
     this.imagenFile = archivo;
 
     this.imagenPreview = URL.createObjectURL(archivo);
+    console.log(this.imagenFile?.name);
+    this.test();
   }
   test() {
     console.log(this.articuloU);
@@ -183,6 +188,8 @@ estadoDisponible: boolean = false;
 
     this.imagenPreview = this.articulo.imagen;
     this.imagenFile = null;
+    this.inputImagen.nativeElement.value = '';
+    this.cdr.markForCheck();
   }
   cambiarEstado(event: any) {
     this.estadoDisponible = event.target.checked;
