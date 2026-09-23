@@ -6,7 +6,8 @@ import { Usuarios } from '../models/usuarios/usuarios.model';
 import { UserDTO } from '../models/usuarios/usuario.dto';
 import { UserAccessDTO } from '../models/usuarios/usuario-access.dto';
 import { UserAdminDTO } from '../models/usuarios/usuarios-admin.dto';
-import { User1DTO } from '../models/usuarios/usuario1.dto'
+import { User1DTO } from '../models/usuarios/usuario1.dto';
+import {newUser} from '../models/usuarios/newUser.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +26,8 @@ export class UsuariosService {
     return this.http.get<ApiResponse<Usuarios>>(`${this.url}/${id}`);
   }
 
-  crearUsuario(newUsuario:UserDTO):Observable<ApiResponse<Usuarios>>{
-    return this.http.post<ApiResponse<Usuarios>>(`${this.url}`, newUsuario);
+  crearUsuario(newUsuario:UserDTO):Observable<ApiResponse<newUser>>{
+    return this.http.post<ApiResponse<newUser>>(`${this.url}`, newUsuario);
   }
 
   borrarUsuario(id: number):Observable<ApiResponse<null>>{

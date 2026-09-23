@@ -6,6 +6,7 @@ import { ApiResponse } from '../models/response/apiResponse';
 import { CrearVentaDTO } from '../models/ventas/crear-ventas.dto';
 import { VentasUsuarioDTO } from '../models/ventas/ventas-usuario.dto';
 import { TotalDTO } from '../models/ventas/total.dto';
+import { VentaDTO } from '../models/ventas/venta.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,10 @@ export class VentasService {
     return this.http.get<ApiResponse<Ventas>>(`${this.url}`);
   }
 
-  crearVenta(id: number): Observable<ApiResponse<CrearVentaDTO>>{
-    return this.http.post<ApiResponse<CrearVentaDTO>>(`${this.url}/${id}`, null)
+  crearVenta(venta: VentaDTO): Observable<ApiResponse<CrearVentaDTO>>{
+    /*const formData = new FormData();
+    formData.append('venta', new Blob([JSON.stringify(venta)], {type: 'application/json'}));*/
+    return this.http.post<ApiResponse<CrearVentaDTO>>(`${this.url}`, venta);
   }
 
   obtenerVentasUsuario(id: number): Observable<ApiResponse<VentasUsuarioDTO>>{

@@ -153,7 +153,7 @@ public class ArticulosServiceImpl implements ArticulosService {
 
             return repository.crearArticulo(newArticulo.getTitulo(), newArticulo.getDescripcion(),
                     newArticulo.getPrecio(), newArticulo.getCategoria(),
-                    newArticulo.getUbicacion(), nombreArchivo, newArticulo.getIdUsuario());
+                     nombreArchivo, newArticulo.getIdUsuario());
         } catch (Exception ex) {
             throw new DatabaseOperationException(ex.getLocalizedMessage(), ex.getCause());
         }
@@ -209,6 +209,15 @@ public class ArticulosServiceImpl implements ArticulosService {
         try {
             return repository.obtenerComprasDeUsuario(id);
         } catch (Exception ex) {
+            throw new DatabaseOperationException(ex.getLocalizedMessage(), ex.getCause());
+        }
+    }
+
+    @Override
+    public List<ArticulosCategoriaDTO> buscarPorFiltro(String titulo, String categoria){
+        try{
+            return repository.filtroArticulos(titulo, categoria);
+        }catch (Exception ex){
             throw new DatabaseOperationException(ex.getLocalizedMessage(), ex.getCause());
         }
     }

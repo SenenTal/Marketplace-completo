@@ -41,5 +41,6 @@ public interface ArticulosService {
     List<ArticulosUsuariosDTO> obtenerArticulosVendidos(Long id);
 
     List<ComprasDTO> obtenerArticulosComprados(Long id);
-    
+
+    List<ArticulosCategoriaDTO> buscarPorFiltro(String titulo, String categoria);
 }

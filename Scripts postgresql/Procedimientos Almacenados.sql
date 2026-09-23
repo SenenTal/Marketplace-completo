@@ -15,12 +15,14 @@ $$;
 
 --Función para crear un articulo, necesita el id de un usuario: fn_crear_articulo()
 CREATE OR REPLACE FUNCTION fn_crear_articulo(p_titulo VARCHAR, p_descripcion VARCHAR, p_precio REAL, 
-p_categoria VARCHAR, p_ubicacion VARCHAR, p_imagen VARCHAR, p_id_usuario BIGINT)
+p_categoria VARCHAR, p_imagen VARCHAR, p_id_usuario BIGINT)
 RETURNS TABLE(id BIGINT, titulo VARCHAR, descripcion VARCHAR, precio REAL, categoria VARCHAR, estado_articulo BOOLEAN,
 ubicacion VARCHAR, fecha_publicacion TIMESTAMP, imagen VARCHAR, id_usuario BIGINT)
 LANGUAGE 'plpgsql'
 AS
 $$
+DECLARE
+	p_ubicacion VARCHAR;
 BEGIN 
 	/*Confirmar si existe o no articulo con el mismo titulo*/
 	IF EXISTS(SELECT 1 FROM articulos a WHERE a.titulo = p_titulo)
@@ -31,7 +33,8 @@ BEGIN
 	IF NOT EXISTS(SELECT 1 FROM usuarios u WHERE u.id = p_id_usuario)
 	THEN RAISE EXCEPTION 'No existe el usuario' USING ERRCODE = 'P0001';
 	END IF;
-
+	--Obtener la ubicación del usuario
+	SELECT u.ubicacion INTO p_ubicacion FROM usuarios u WHERE u.id = p_id_usuario;
 	/*Insertar datos en la tabla articulos*/
 	INSERT INTO articulos(titulo, descripcion, precio, categoria, estado_articulo, ubicacion, 
 	fecha_publicacion, imagen, id_usuario)
@@ -222,7 +225,7 @@ END;
 $$;
 
 CREATE OR REPLACE FUNCTION fn_listar_articulos_vendidos_id(p_id BIGINT)
-RETURNS TABLE(id_articulo BIGINT, titulo VARCHAR, estado_articulo BOOLEAN, id_usuario BIGINT, username VARCHAR)
+RETURNS TABLE(id_articulo BIGINT, titulo VARCHAR, precio REAL, fechaVenta TIMESTAMP, username VARCHAR)
 LANGUAGE 'plpgsql'
 AS
 $$
@@ -234,10 +237,12 @@ BEGIN
 	IF EXISTS(SELECT 1 FROM usuarios u WHERE u.id = p_id)
 	THEN
 	RETURN QUERY
-	SELECT a.id, a.titulo, a.estado_articulo, u.id, u.usuario
-	FROM articulos a JOIN usuarios u ON a.id_usuario = u.id
-	JOIN ventas v ON v.comprador_id = u.id
-	WHERE a.estado_articulo = FALSE AND u.id = p_id;
+	SELECT a.id, a.titulo, a.precio, v.fecha_venta, comprador.usuario
+	AS username FROM articulos a 
+	LEFT JOIN usuarios vendedor ON a.id_usuario = vendedor.id
+	LEFT JOIN ventas v ON v.articulo_id = a.id
+	LEFT JOIN usuarios comprador ON v.comprador_id = comprador.id
+	WHERE a.estado_articulo = FALSE AND vendedor.id = p_id;
 	END IF;
 END;
 $$;
@@ -493,7 +498,7 @@ $$;
 
 --Funciones Almacenadas para Ventas:
 --Función almacenada para crear una Venta
-CREATE OR REPLACE FUNCTION fn_crear_venta(p_id_articulo BIGINT)
+CREATE OR REPLACE FUNCTION fn_crear_venta(p_id_articulo BIGINT, p_id_usuario BIGINT)
 RETURNS TABLE(id_articulo BIGINT, titulo VARCHAR, cantidad REAL, fecha_venta TIMESTAMP)
 LANGUAGE 'plpgsql'
 AS
@@ -507,18 +512,23 @@ BEGIN
 	THEN RAISE EXCEPTION 'Este articulo no existe' USING ERRCODE = 'P0001';
 	END IF;
 	/*Verificar la disponibilidad*/
-	SELECT a.estado_articulo into status FROM articulos a WHERE a.id = p_id_articulo;
+	SELECT a.estado_articulo INTO status FROM articulos a WHERE a.id = p_id_articulo;
 	IF status = FALSE
 	THEN RAISE EXCEPTION 'Articulo no disponible para venta' USING ERRCODE = 'P0001';
 	END IF;
 	/*Realizar la venta*/
 	--Seleccionar el precio e insertarlo en cantidad de Ventas
 	SELECT a.precio INTO p_precio FROM articulos a WHERE a.id = p_id_articulo;
-	INSERT INTO ventas(cantidad, articulo_id, fecha_venta) 
-	VALUES(p_precio, p_id_articulo, CURRENT_TIMESTAMP);
+
+	--Restar el precio del articulo al dinero electronico del usuario/comprador
+	UPDATE usuarios u SET dinero_electronico = (dinero_electronico - p_precio) WHERE u.id = p_id_usuario;
 
 	--Modifcar el articulo ya vendido en su disponibilidad en estado
 	UPDATE articulos a SET estado_articulo = FALSE WHERE a.id = p_id_articulo;
+
+	--Crear el registro de la nueva compra
+	INSERT INTO ventas(cantidad, articulo_id, fecha_venta, comprador_id) 
+	VALUES(p_precio, p_id_articulo, CURRENT_TIMESTAMP, p_id_usuario);
 
 	--Regresar los datos de tabla
 	RETURN QUERY
@@ -600,7 +610,7 @@ $$;
 
 --Procedimiento Almacenado fn_compras_usuario() para mostrar los articulos comprados por el usuario. 
 --Lo busca por el id de usuario
-CREATE OR REPLACE FUNCTION fn_compras_usuario(p_id BIGINT)
+/*CREATE OR REPLACE FUNCTION fn_compras_usuario(p_id BIGINT)
 RETURNS TABLE(titulo VARCHAR, descripcion VARCHAR, precio REAL, fecha TIMESTAMP, imagen VARCHAR)
 LANGUAGE 'plpgsql'
 AS
@@ -612,7 +622,7 @@ BEGIN
 	LEFT JOIN articulos a ON v.articulo_id = a.id
 	WHERE v.comprador_id = p_id;
 END;
-$$;
+$$; */
 
 --Procedimiento Almacenado fn_asignar_ubicacion() para asignar la ubicacion del usuario para 
 --las ubicaciones de los articulos del usuario
@@ -675,4 +685,37 @@ BEGIN
 END;
 $$;
 
+--Función almacenada para ver los articulos comprados del usuario
+CREATE OR REPLACE FUNCTION fn_compras_usuario(p_id BIGINT)
+RETURNS TABLE(id BIGINT, titulo VARCHAR, costo REAL, fecha_venta TIMESTAMP)
+LANGUAGE 'plpgsql'
+AS
+$$	
+BEGIN 
+	RETURN QUERY
+	SELECT v.id, a.titulo, v.cantidad, v.fecha_venta FROM ventas v
+	LEFT JOIN articulos a ON v.articulo_id = a.id
+	LEFT JOIN usuarios u ON u.id = v.comprador_id
+	WHERE v.comprador_id = p_id;
+END;
+$$;
+
+--Procedimiento Almacenado para filtrar la búsqueda de articulos tanto por titulo como por categoria
+CREATE OR REPLACE FUNCTION fn_busquedaArticulos(p_titulo VARCHAR, p_categoria VARCHAR)
+RETURNS TABLE(id_articulo BIGINT, titulo VARCHAR, descripcion VARCHAR, precio REAL, categoria VARCHAR, 
+estado_articulo boolean, ubicacion VARCHAR, fecha_publicacion TIMESTAMP, imagen VARCHAR)
+LANGUAGE 'plpgsql'
+AS
+$$
+BEGIN
+	RETURN QUERY
+	SELECT a.id, a.titulo, a.descripcion, a.precio, a.categoria, a.estado_articulo, a.ubicacion,
+	a.fecha_publicacion, a.imagen FROM articulos a WHERE
+	(p_titulo = '' OR a.titulo ILIKE '%' || p_titulo || '%')
+	AND (p_categoria = '' OR a.categoria = p_categoria) ORDER BY a.id ASC;
+END;
+$$;
+
 SELECT * FROM usuarios u ORDER BY u.id ASC;
+SELECT * FROM articulos a ORDER BY a.id ASC;
+SELECT * FROM ventas v ORDER BY v.id ASC;

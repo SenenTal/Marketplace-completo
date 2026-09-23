@@ -16,8 +16,6 @@ public class InsertarArticulosDTO {
     String descripcion;
     float precio;
     String categoria;
-    boolean estadoArticulo;
-    String ubicacion;
     Long idUsuario;
 
     public String getTitulo() {
@@ -34,14 +32,6 @@ public class InsertarArticulosDTO {
 
     public String getCategoria() {
         return categoria;
-    }
-
-    public boolean isEstadoArticulo() {
-        return estadoArticulo;
-    }
-
-    public String getUbicacion() {
-        return ubicacion;
     }
 
     public Long getIdUsuario() {

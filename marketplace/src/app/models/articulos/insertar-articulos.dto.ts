@@ -3,6 +3,5 @@ export interface InsertarArticuloDTO{
     descripcion: String;
     precio: number;
     categoria: String;
-    ubicacion: String;
     idUsuario: number;
 }

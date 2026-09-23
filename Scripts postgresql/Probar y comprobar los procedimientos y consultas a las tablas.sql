@@ -25,8 +25,8 @@ UPDATE usuarios u SET ubicacion = 'Guasave, Sinaloa'::VARCHAR WHERE u.id = 4;
 --Probar fn_llamar_usuarios()
 SELECT * FROM fn_llamar_usuarios();
 --Probar fn_crear_usuario()
-SELECT * FROM fn_crear_usuario('Javier', 'El Tostada', 'fuego');
-SELECT * FROM fn_crear_usuario('Tulio', 'Dark Cloud', '123456');
+SELECT * FROM fn_crear_usuario('Raquel', 'El Tostada', 'fuego', 'Culiacan, Sinaloa');
+SELECT * FROM fn_crear_usuario('Tulio', 'Dark Cloud', '123456', 'Guasave, Sinaloa');
 --Probar fn_obtener_usuario_por_id()
 SELECT * FROM fn_obtener_usuario_por_id(10);
 --Probar fn_iniciar_sesion()
@@ -44,10 +44,10 @@ SELECT * FROM fn_obtener_ventas();
 SELECT * FROM fn_llamar_articulos();
 
 --Probar a fn_listar_articulos_vendidos_id()
-SELECT * FROM fn_listar_articulos_vendidos_id(1);
+SELECT * FROM fn_listar_articulos_vendidos_id(4);
 
 --Probar a fn_compras_usuario()
-SELECT * FROM fn_compras_usuario(1);
+SELECT * FROM fn_compras_usuario(17);
 
 --Probar a fn_asignar_ubicacion()
 SELECT * FROM fn_asignar_ubicacion(4);
@@ -79,7 +79,26 @@ CURRENT_TIMESTAMP::TIMESTAMP, '33188751-23c9-49f7-b033-ed4daead359d_spiderman ma
 SELECT * FROM fn_obtener_nombre_imagen(2);
 
 --Probar a fn_listar_articulos_usuario()
-SELECT * FROM fn_listar_articulos_usuario(1);
+SELECT * FROM fn_listar_articulos_usuario(3);
 
 --Probar a fn_recargar_dinero()
-SELECT * FROM fn_recargar_dinero(1::BIGINT, 1000::REAL);
+SELECT * FROM fn_recargar_dinero(2::BIGINT, 1000::REAL);
+
+--Probar a fn_obtener_articulo_por_id()
+SELECT * FROM fn_obtener_articulo_por_id(8);
+
+--Probar querys del examen
+SELECT id AS 'usuario_id', COUNT(*) FROM usuarios
+
+--
+SELECT id, ANY_VALUE(nombre) FROM usuarios GROUP BY id;
+
+--Mostrar venta
+SELECT * FROM ventas v ORDER BY v.id;
+
+--Probar fn_compras_usuario()
+SELECT * FROM fn_compras_usuario(1);
+
+SELECT * FROM fn_listar_articulos_vendidos_id(4);
+--Probar a fn_busquedaArticulos()
+SELECT * FROM fn_busquedaArticulos('','');

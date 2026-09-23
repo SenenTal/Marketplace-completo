@@ -40,7 +40,7 @@ services:
   #Imagen para Articulos
   articulos:
     build:
-      context: ./Articulos
+      context: ./Backend/Articulos
       dockerfile: Dockerfile
     image: marketplace/articulo-service:1.0-SNAPSHOT
     container_name: articulos-service
@@ -60,7 +60,7 @@ services:
   #Imagen para Ventas
   ventas:
     build:
-      context: ./Ventas
+      context: ./Backend/Ventas
       dockerfile: Dockerfile
     image: marketplace/ventas-service:1.0-SNAPSHOT
     container_name: ventas-service
@@ -80,7 +80,7 @@ services:
   #Imagen para Usuarios
   usuarios:
     build:
-      context: ./Usuarios
+      context: ./Backend/Usuarios
       dockerfile: Dockerfile
     image: marketplace/usuarios-service:1.0-SNAPSHOT
     container_name: usuarios-service

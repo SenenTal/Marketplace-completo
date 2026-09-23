@@ -67,7 +67,9 @@ de actualizar usuario.
 registro en articulos) al momento de sustituir por otra imagen.
 -En la base de datos. Modificar el procedimiento almacenado que actualiza el usuario. Y que actualice la ubicación tanto del usuario
 como de los articulos publicados por el usuario.
--Programar un modal en el componente options, para actualizar/recargar el dinero electronico del usuario. 
+-Programar un modal en el componente options, para actualizar/recargar el dinero electronico del usuario.
+-Programar la pantalla para articulos vendidos y articulos no disponibles (ya vendidos). Y una pantalla de ganancias de usuarios
+
 
 -------Cosas que le faltan para la prueba Docker-------
 -Hacer pruebas con Docker-compose. Checar como hacer que obtenga (ya sea por un servicio api) la dirección de las imagenes

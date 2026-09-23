@@ -13,16 +13,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -85,7 +76,7 @@ public class ArticulosController {
     }
 
     @PostMapping()
-    public ResponseEntity<ApiResponse<?>> crearArticulo(@RequestPart @Valid InsertarArticulosDTO newArticulo,
+    public ResponseEntity<ApiResponse<?>> crearArticulo(@RequestPart("articulo") @Valid InsertarArticulosDTO newArticulo,
             @RequestPart("imagen") MultipartFile imagen ) {
         Articulos nuevoArticulo = service.crearArticulo(newArticulo, imagen);
         return ResponseEntity.status(HttpStatus.OK).body(
@@ -137,7 +128,7 @@ public class ArticulosController {
         }
     }
     
-    @GetMapping("usuarios/vendidos/{idUsuario}")
+    @GetMapping("/vendidos/{idUsuario}")
     public ResponseEntity<ApiResponse<?>> obtenerArticulosVendidosPorIdUsuario(
             @PathVariable("idUsuario") @Valid Long idUsuario) {
         List<ArticulosUsuariosDTO> listado = service.obtenerArticulosVendidos(idUsuario);
@@ -151,7 +142,7 @@ public class ArticulosController {
         }
     }
 
-    @GetMapping("usuarios/comprados/{id}")
+    @GetMapping("/comprados/{id}")
     public ResponseEntity<ApiResponse<?>> obtenerComprasDeUsuario(
             @PathVariable("id") @Valid Long id
     ){
@@ -160,5 +151,14 @@ public class ArticulosController {
                 new ApiResponse<>(true, "Compras",
                         HttpStatus.OK, compras)
         );
+    }
+
+    @GetMapping("/buscar")
+    public ResponseEntity<ApiResponse<?>> buscarArticulos(@RequestParam("titulo") @Valid String titulo,
+                                                          @RequestParam("categoria") @Valid String categoria){
+    List<ArticulosCategoriaDTO> articulos = service.buscarPorFiltro(titulo, categoria);
+    return ResponseEntity.status(HttpStatus.OK).body(
+            new ApiResponse<>(true, "Articulos", HttpStatus.OK, articulos)
+    );
     }
 }

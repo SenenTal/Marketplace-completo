@@ -11,6 +11,7 @@ import {AuthService} from '../../services/auth.service';
 import {User1DTO} from '../../models/usuarios/usuario1.dto';
 import {UserAccessDTO} from '../../models/usuarios/usuario-access.dto';
 import { ElementRef, ViewChild } from '@angular/core';
+import {ComprasDTO} from '../../models/ventas/compras.dto';
 
 @Component({
   selector: 'app-options',
@@ -40,6 +41,7 @@ export class OptionsComponent implements OnInit {
   }
   dinero_electronico: number = 0;
   accesoBloqueado: boolean = false;
+  articulosComprados: ComprasDTO[] = [];
 
   constructor(private usuariosService: UsuariosService,
               private route: ActivatedRoute,
@@ -55,6 +57,7 @@ export class OptionsComponent implements OnInit {
     this.obtenerArticulos();
     this.obtenerArticulosVendidos();
     this.obtenerGanancias();
+    this.comprasUser();
   }
 
   obtenerCredenciales() {
@@ -68,7 +71,7 @@ export class OptionsComponent implements OnInit {
           this.user.id = this.id;
           this.cdr.markForCheck();
         }, error: (error) => {
-          console.log(error);
+          console.log(`${error.error.message}`);
         }
       });
   }
@@ -267,6 +270,18 @@ export class OptionsComponent implements OnInit {
     this.vaciarCredenciales();
     this.dinero_electronico = 0;
     this.cdr.markForCheck();
+  }
+
+  comprasUser(){
+    this.articulosService.articulosCompradosPorUsuario(this.id).subscribe({
+      next: (resp) => {
+        this.articulosComprados = resp.data;
+        this.cdr.markForCheck();
+      },
+      error: (error) => {
+        console.log(`${error.error.message}`);
+      }
+    })
   }
 
 }

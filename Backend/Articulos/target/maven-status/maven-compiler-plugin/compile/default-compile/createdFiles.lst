@@ -7,6 +7,7 @@ com\senen\articulos\service\impl\ArticulosServiceImpl.class
 com\senen\articulos\ArticulosApplication.class
 com\senen\articulos\DTO\InsertarArticulosDTO.class
 com\senen\articulos\service\ArticulosService.class
+com\senen\articulos\DTO\FiltroDTO.class
 com\senen\articulos\DTO\ModificarArticulo2DTO.class
 com\senen\articulos\response\ApiResponse.class
 com\senen\articulos\DTO\ArticulosCategoriaDTO.class

@@ -42,7 +42,7 @@ export class CreateUserComponent {
       this.service.crearUsuario(this.user).subscribe(
         {
           next: (resp) => {
-            Swal.fire('Creado correctamente', `Nuevo Usuario: ${resp.data.user}`, 'success')
+            Swal.fire('Creado correctamente', `Nuevo Usuario: ${resp.data.usuario}`, 'success')
             this.router.navigate(['/articulos']);
           }, error: (error) => {
             Swal.fire('Error', error.error?.message || 'Error desconocido', 'error');

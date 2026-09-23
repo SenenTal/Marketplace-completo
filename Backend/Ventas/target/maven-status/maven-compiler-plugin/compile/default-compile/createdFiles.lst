@@ -1,3 +1,4 @@
+com\senen\ventas\DTO\VentaDTO.class
 com\senen\ventas\service\VentasService.class
 com\senen\ventas\DTO\CompradoresDTO.class
 com\senen\ventas\DTO\CrearVentaDTO.class

@@ -4,6 +4,8 @@
  */
 package com.senen.articulos.DTO;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author senen
@@ -14,9 +16,9 @@ public interface ArticulosUsuariosDTO {
     
     String getTitulo();
     
-    boolean getEstadoArticulo();
+    Float getPrecio();
     
-    Long getIdUsuario();
+    LocalDateTime getFechaVenta();
     
     String getUsername();
     

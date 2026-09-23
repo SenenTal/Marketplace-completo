@@ -35,9 +35,9 @@ public class VentasServiceImpl implements VentasService {
     }
 
     @Override
-    public CrearVentaDTO crearVenta(Long id) {
+    public CrearVentaDTO crearVenta(Long idArticulo, Long idUsuario) {
         try {
-            return repository.crearVenta(id);
+            return repository.crearVenta(idArticulo, idUsuario);
         } catch (Exception ex) {
             throw new DatabaseOperationException(ex.getLocalizedMessage(), ex.getCause());
         }
@@ -60,5 +60,7 @@ public class VentasServiceImpl implements VentasService {
             throw new DatabaseOperationException(ex.getLocalizedMessage(), ex.getCause());
         }
     }
+
+
     
 }

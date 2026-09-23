@@ -22,8 +22,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface VentasRepository extends JpaRepository<Ventas, Long> {
     
-    @Query(value = "SELECT * FROM fn_crear_venta(:id_articulo)", nativeQuery = true)
-    CrearVentaDTO crearVenta(@Param("id_articulo") Long id);
+    @Query(value = "SELECT * FROM fn_crear_venta(:id_articulo, :id_usuario)", nativeQuery = true)
+    CrearVentaDTO crearVenta(@Param("id_articulo") Long idArticulo, @Param("id_usuario") Long idUsuario);
     
     @Transactional
     @Query(value = "SELECT * FROM fn_obtener_ganancias_usuario(:id_usuario)", nativeQuery = true)
@@ -40,5 +40,7 @@ public interface VentasRepository extends JpaRepository<Ventas, Long> {
     @Transactional
     @Query(value = "SELECT * FROM fn_verificar_venta(:id)", nativeQuery=true)
     Ventas obtenerVentaPorArticuloId(@Param("id") Long id);
+
+
     
 }

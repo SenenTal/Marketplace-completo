@@ -1,8 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { ArticuloService } from '../../services/articulo.service';
-import { ArticulosCategoriaDTO } from '../../models/articulos/articulos-categoria.dto';
-import { Router } from '@angular/router';
+import {Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
+import {ArticuloService} from '../../services/articulo.service';
+import {ArticulosCategoriaDTO} from '../../models/articulos/articulos-categoria.dto';
+import {Router} from '@angular/router';
 import Swal from 'sweetalert2';
+import {FiltroDTO} from '../../models/articulos/filtro.dto';
 
 @Component({
   selector: 'app-articles',
@@ -22,12 +23,17 @@ export class ArticlesComponent implements OnInit {
   imageUrl = "http://localhost:8001/imagenes/";
   filtroTitulo: string = '';
   filtroCategoria: string = '';
+  filtro: FiltroDTO = {
+    titulo: '',
+    categoria: ''
+  }
 
   constructor(private service: ArticuloService,
-    private router: Router, private cdr: ChangeDetectorRef) { }
+              private router: Router, private cdr: ChangeDetectorRef) {
+  }
 
   ngOnInit() {
-    this.listarArticulos();
+    this.filtrarArticulos();
   }
 
   listarArticulos() {
@@ -54,42 +60,7 @@ export class ArticlesComponent implements OnInit {
     this.router.navigate(['/articulos', id])
   }
 
-  listarPorTitulo() {
-    //Filtrar los espacios en titulo
-    if (this.filtroTitulo.trim() === '') {
-      this.listarArticulos(); // volver a todos
-      return;
-    }
-    this.service.buscarArticulosPorTitulo(this.filtroTitulo).subscribe({
-      next: (resp) => {
-        this.articulos = resp.data;
-        console.log(this.articulos);
-        this.page = 1;
-        this.aplicarPaginacion();
-        this.cdr.markForCheck();
-      }, error: (error) => {
-        Swal.fire('Error', `${error.error.message}` || 'Error Desconocido', 'error')
-      }
-    })
-  }
 
-  listarPorCategoria() {
-    if (this.filtroCategoria === '') {
-      this.listarArticulos();
-      return;
-    }
-    this.service.buscarArticulosPorCategoria(this.filtroCategoria).subscribe({
-      next: (resp) => {
-        this.articulos = resp.data;
-        console.log(this.articulos);
-        this.page = 1;
-        this.aplicarPaginacion();
-        this.cdr.markForCheck();
-      }, error: (error) => {
-        Swal.fire('Error', `${error.error.message}` || 'Error Desconocido', 'error');
-      }
-    })
-  }
   aplicarPaginacion() {
     //Calcular cuantas páginas existen
     this.totalPages = Math.ceil(this.articulos.length / this.size);
@@ -115,12 +86,14 @@ export class ArticlesComponent implements OnInit {
     this.cdr.markForCheck();
     console.log(`inicio: ${inicio}, fin: ${fin}`);
   }
+
   paginaSiguiente() {
     if (this.page < this.totalPages) {
       this.page++;
       this.aplicarPaginacion();
     }
   }
+
   paginaAnterior() {
     if (this.page > 1) {
       this.page--;
@@ -128,4 +101,67 @@ export class ArticlesComponent implements OnInit {
     }
   }
 
+  filtrarArticulos() {
+    this.filtro
+    {
+      this.filtro.titulo = this.filtroTitulo.trim();
+      this.filtro.categoria = this.filtroCategoria;
+    };
+    console.log(`Filtro: ${this.filtro}`)
+    //Si no hay ningún filtro, obtiene todos los articulos
+    if (this.filtroTitulo === '' && this.filtroCategoria === '') {
+      this.listarArticulos();
+      return;
+    }
+    this.service.filtroBusquedaArticulos(this.filtro).subscribe({
+      next: (resp) => {
+        this.articulos = resp.data;
+        this.page = 1;
+        this.aplicarPaginacion();
+        console.log(`Resultados: ${this.articulos}`);
+        this.cdr.markForCheck();
+      },
+      error: (error) => {
+        console.log(`${error.error.message}`);
+      }
+    })
+  }
+
 }
+
+/*listarPorTitulo() {
+    //Filtrar los espacios en titulo
+    if (this.filtroTitulo.trim() === '') {
+      this.listarArticulos(); // volver a todos
+      return;
+    }
+    this.service.buscarArticulosPorTitulo(this.filtroTitulo).subscribe({
+      next: (resp) => {
+        this.articulos = resp.data;
+        console.log(this.articulos);
+        this.page = 1;
+        this.aplicarPaginacion();
+        this.cdr.markForCheck();
+      }, error: (error) => {
+        Swal.fire('Error', `${error.error.message}` || 'Error Desconocido', 'error')
+      }
+    })
+  }*/
+
+/*listarPorCategoria() {
+  if (this.filtroCategoria === '') {
+    this.listarArticulos();
+    return;
+  }
+  this.service.buscarArticulosPorCategoria(this.filtroCategoria).subscribe({
+    next: (resp) => {
+      this.articulos = resp.data;
+      console.log(this.articulos);
+      this.page = 1;
+      this.aplicarPaginacion();
+      this.cdr.markForCheck();
+    }, error: (error) => {
+      Swal.fire('Error', `${error.error.message}` || 'Error Desconocido', 'error');
+    }
+  })
+}*/

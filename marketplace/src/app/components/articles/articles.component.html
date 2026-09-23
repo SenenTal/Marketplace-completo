@@ -8,12 +8,12 @@
                 <div class="col-12 col-md-6">
                     <label class="form-label fw-semibold">Buscar por Titulo</label>
                     <input type="text" class="form-control" placeholder="Escriba" [(ngModel)]="filtroTitulo"
-                        (input)="listarPorTitulo()">
+                        (input)="filtrarArticulos()">
                 </div>
                 <div class="col-12 col-md-4">
                     <label class="form-label fw-semibold">Categoria</label>
                     <select class="form-select" [(ngModel)]="filtroCategoria" name="categoria"
-                        (change)="listarPorCategoria()">
+                        (change)="filtrarArticulos()">
                         <option value="">Seleccione una categoría</option>
                         <option value="Autos y Transporte">Autos y Transporte</option>
                         <option value="Ropa">Ropa</option>
@@ -61,7 +61,7 @@
 
                     <!-- Precio -->
                     <p class="text-success">
-                        ${{articulo.precio}}
+                        ${{articulo.precio | currency:'MXN':'symbol':'1.0-2':'es-MX'}}
                     </p>
 
                     <!-- Estado -->

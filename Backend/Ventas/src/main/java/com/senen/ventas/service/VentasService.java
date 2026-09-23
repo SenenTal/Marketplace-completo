@@ -18,10 +18,11 @@ public interface VentasService {
     
     List<VentasUsuarioDTO> obtenerVentasPorUsuario(Long id);
     
-    CrearVentaDTO crearVenta(Long id);
+    CrearVentaDTO crearVenta(Long idArticulo, Long idUsuario);
     
     TotalDTO obtenerGanancias(Long id);
     
     List<Ventas> listarVentas();
-    
+
+
 }

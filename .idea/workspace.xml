@@ -5,185 +5,114 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d50828bc-3b92-4d68-9948-9c9b03de604f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Articulos/nbactions.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/ArticulosApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/DTO/ArticulosCategoriaDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/DTO/ArticulosDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/DTO/ArticulosUsuariosDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/DTO/InsertarArticulosDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/DTO/ModificarArticulo1DTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/DTO/ModificarArticulo2DTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/entities/Articulos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/exception/DatabaseOperationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/repository/ArticulosRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/response/ApiResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/service/ArticulosService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/java/com/senen/articulos/webconfig/WebConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/Articulos-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/Articulos-1.0-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/ArticulosApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/DTO/ArticulosCategoriaDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/DTO/ArticulosDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/DTO/ArticulosUsuariosDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/DTO/InsertarArticulosDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/DTO/ModificarArticulo1DTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/DTO/ModificarArticulo2DTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/controller/ArticulosController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/entities/Articulos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/exception/DatabaseOperationException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/exception/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/repository/ArticulosRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/response/ApiResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/service/ArticulosService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/service/impl/ArticulosServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/classes/com/senen/articulos/webconfig/WebConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Articulos/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/1ad8fa8b-3cb4-4fdd-9f24-c17fddb2e117_iphone 15.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/20ae6464-a995-4245-ab1f-80f578349b4e_Bajo azul.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/225f4cb0-806b-41fb-8dbe-3b9151020110_imagenBeatle.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/293723a7-0399-4ab2-8d9d-8e04f17a2895_Bajo azul.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/35d49c35-6bfc-4f94-af01-dcdc2aed10b4_imagenBeatle.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/38a3b967-85d3-4fbd-aebe-76fe4a93f150_Atletico.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/43d9e177-56d7-48d7-9d0f-809e7a0550e6_Atletico.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/4aa389c1-7bbf-465b-9324-6da21fa56146_gorra_mago.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/4c12379e-70d7-45bb-991a-71830e32083e_fotoDelControl.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/4d169089-3f4a-4376-9f8d-aeb56212b00c_control plays5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/50dd10bb-e029-4915-b3eb-686d828fd727_Hot Wheels.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/562de451-1858-4eb7-a319-022d504c5c80_flying v.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/56790c58-8a0a-4e26-8477-ca850020f025_Lentes circulares rojos 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/743a6ceb-525b-45b3-a79c-2b68a01ab9da_xbox one rojo control.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/7ee4c958-3c67-4635-b91c-36a434e6980c_alexa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/7f582c46-51ef-44d5-b5c3-77139c416b1a_xbox one rojo control.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/a54b15fb-52af-43b0-9124-e054b8f944b5_kakashi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/c3c93a7c-ab11-4729-a420-7ddafd9f569c_Itachi Uchiha.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/cd0ff4cb-e272-447a-bde8-83e82f763680_Link.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/d50147df-de7b-4380-b38a-e5c43eecead6_herramientas.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/d9cc925b-d1f3-4077-abc8-39da649fb1bb_Itachi Uchiha.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/e1165395-3247-4b32-ad4c-304f6f6fa62b_Lentes Rojos.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/e8040620-1bda-40a1-8e7a-fe00ea487316_ford-ranger.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/e8a57002-6bcc-4944-950b-10a72ec87556_Zapatos Jean Pierre.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/ef89f77d-a3d7-44b1-9f1f-6cb608ca55b5_xbox one rojo control.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/efb47efe-4881-44aa-ba57-556597c84c5f_Bajo azul.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/f0dc5c33-1b47-4874-9e7e-cbb87363290a_Lentes Rojos.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/f1c356e4-1e56-4338-8828-2b29d8f94b75_smokin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/f1e922f8-db67-4001-a569-3816880fedba_xbox one rojo control.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/f41c3529-5c7f-4c12-a2ad-8379ec317bae_gorra_mago.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/fcc1f7ee-07c6-4e45-9068-cd888701cdca_3ds aqua.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/foto123.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/fotoDelControl.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/fotoPlayera.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/imagen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/imagenes23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/picture.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/producto.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/nbactions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/ArticulosApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/DTO/ArticulosCategoriaDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/DTO/ArticulosDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/DTO/ArticulosUsuariosDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/DTO/ComprasDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/DTO/InsertarArticulosDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/DTO/ModificarArticulo1DTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/DTO/ModificarArticulo2DTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/controller/ArticulosController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/entities/Articulos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/exception/DatabaseOperationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/repository/ArticulosRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/response/ApiResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/service/ArticulosService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/java/com/senen/articulos/webconfig/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/bin/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/DTO/ArticulosUsuariosDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/DTO/ArticulosUsuariosDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/DTO/ComprasDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/DTO/ComprasDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/DTO/InsertarArticulosDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/DTO/InsertarArticulosDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/repository/ArticulosRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/repository/ArticulosRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/ArticulosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/ArticulosService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/DTO/ArticulosUsuariosDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/DTO/ArticulosUsuariosDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/DTO/ComprasDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/DTO/ComprasDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/DTO/InsertarArticulosDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/DTO/InsertarArticulosDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/controller/ArticulosController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/controller/ArticulosController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/repository/ArticulosRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/repository/ArticulosRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/service/ArticulosService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/service/ArticulosService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/service/impl/ArticulosServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/service/impl/ArticulosServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/.settings/org.eclipse.jdt.apt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/nbactions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/UsuariosApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/controller/UsuariosController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/dto/AccesoDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/dto/User1DTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/dto/UserAccessDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/dto/UserAdminDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/dto/UserDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/dto/UsuarioDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/entities/Usuarios.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/exception/DatabaseOperationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/repository/UsuariosRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/response/ApiResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/service/UsuariosService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/java/com/senen/usuarios/service/impl/UsuarioServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/bin/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Usuarios/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/controller/VentasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/controller/VentasController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/repository/VentasRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/repository/VentasRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/service/VentasService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/service/VentasService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/service/impl/VentasServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/service/impl/VentasServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/VentasApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/VentasApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/controller/VentasController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/controller/VentasController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/entities/Ventas.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/entities/Ventas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/exception/DatabaseOperationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/exception/DatabaseOperationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/repository/VentasRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/repository/VentasRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/response/ApiResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/response/ApiResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/service/VentasService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/service/VentasService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/service/impl/VentasServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/service/impl/VentasServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imagenes/014fbc43-7a25-460a-8d71-77b36dabfef7_Vinsmoke sanji figure.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Instrucciones.md" beforeDir="false" afterPath="$PROJECT_DIR$/Instrucciones.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts postgresql/Arrojar Funciones y Base de Datos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts postgresql/Arrojar Funciones y Base de Datos.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts postgresql/Crear Bases de Datos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts postgresql/Crear Bases de Datos.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts postgresql/Probar y comprobar los procedimientos y consultas a las tablas.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts postgresql/Probar y comprobar los procedimientos y consultas a las tablas.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts postgresql/Procedimientos Almacenados.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts postgresql/Procedimientos Almacenados.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/nbactions.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/UsuariosApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/controller/UsuariosController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/dto/AccesoDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/dto/UserAccessDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/dto/UserAdminDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/dto/UserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/entities/Usuarios.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/exception/DatabaseOperationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/repository/UsuariosRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/response/ApiResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/service/UsuariosService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/java/com/senen/usuarios/service/impl/UsuarioServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/Usuarios-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/Usuarios-1.0-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/UsuariosApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/controller/UsuariosController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/dto/AccesoDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/dto/UserAccessDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/dto/UserAdminDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/dto/UserDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/entities/Usuarios.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/exception/DatabaseOperationException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/exception/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/repository/UsuariosRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/response/ApiResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/service/UsuariosService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/classes/com/senen/usuarios/service/impl/UsuarioServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/nbactions.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/DTO/CompradoresDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/DTO/CrearVentaDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/DTO/TotalDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/DTO/VentasUsuarioDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/VentasApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/controller/VentasController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/entities/Ventas.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/exception/DatabaseOperationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/repository/VentasRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/response/ApiResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/service/VentasService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/java/com/senen/ventas/service/impl/VentasServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/Ventas-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/Ventas-1.0-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/DTO/CompradoresDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/DTO/CrearVentaDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/DTO/TotalDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/DTO/VentasUsuarioDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/VentasApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/controller/VentasController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/entities/Ventas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/exception/DatabaseOperationException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/exception/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/repository/VentasRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/response/ApiResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/service/VentasService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/classes/com/senen/ventas/service/impl/VentasServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ventas/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/actualizar-user/actualizar-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/actualizar-user/actualizar-user.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/actualizar-user/actualizar-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/actualizar-user/actualizar-user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/articles-detail/articles-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/articles-detail/articles-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/articles-detail/articles-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/articles-detail/articles-detail.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/articles/articles.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/articles/articles.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/articles/articles.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/articles/articles.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/create-user/create-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/create-user/create-user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/create-article/create-article.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/create-article/create-article.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/create-article/create-article.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/create-article/create-article.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/create-user/create-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/create-user/create-user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/options/options.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/options/options.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/options/options.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/options/options.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/options/options.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/options/options.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/update-article/update-article.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/update-article/update-article.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/update-article/update-article.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/update-article/update-article.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/models/usuarios/usuario.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/models/usuarios/usuario.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/models/usuarios/usuarios.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/models/usuarios/usuarios.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/app/models/articulos/articulos-usuarios.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/models/articulos/articulos-usuarios.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/app/models/articulos/insertar-articulos.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/models/articulos/insertar-articulos.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/app/services/articulo.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/services/articulo.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/src/app/services/usuarios.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/services/usuarios.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/src/app/services/ventas.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/services/ventas.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,9 +123,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
-        <option value="Class" />
         <option value="TypeScript File" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -217,7 +146,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.ArticulosApplication.executor": "Debug",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Application.ArticulosApplication.executor": "Run",
     "Application.UsuariosApplication.executor": "Run",
     "Application.VentasApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -247,7 +177,7 @@
       <recent name="C:\Users\senen\Documents\Marketplace-completo\Backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ArticulosApplication">
+  <component name="RunManager" selected="npm.Marketplace">
     <configuration name="ArticulosApplication" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -399,22 +329,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java</url>
-          <line>110</line>
+          <line>101</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java</url>
-          <line>111</line>
+          <line>102</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java</url>
-          <line>121</line>
+          <line>112</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java</url>
-          <line>120</line>
+          <line>111</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -526,6 +456,76 @@
           <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.java</url>
           <line>104</line>
           <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/controller/VentasController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/service/impl/VentasServiceImpl.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/service/impl/VentasServiceImpl.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/controller/VentasController.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.java</url>
+          <line>209</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.java</url>
+          <line>211</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java</url>
+          <line>149</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.java</url>
+          <line>202</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.java</url>
+          <line>218</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.java</url>
+          <line>220</line>
+          <option name="timeStamp" value="100" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -6,6 +6,8 @@ import Swal from 'sweetalert2';
 import {AuthService} from '../../services/auth.service';
 import {VentasService} from '../../services/ventas.service';
 import {ArticulosDTO} from '../../models/articulos/articulos.dto';
+import {VentaDTO} from '../../models/ventas/venta.dto';
+import {UsuariosService} from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-articles-detail',
@@ -18,6 +20,7 @@ export class ArticlesDetailComponent implements OnInit {
   idUsuario!: number;
   sesion: boolean = false;
   idArticulo!: number;
+  saldo!: number;
   articulo: ArticulosDTO = {
     idArticulo: 0,
     titulo: '',
@@ -28,6 +31,10 @@ export class ArticlesDetailComponent implements OnInit {
     ubicacion: '',
     fechaPublicacion: new Date,
     imagen: '',
+    idUsuario: 0
+  }
+  venta: VentaDTO = {
+    idArticulo: 0,
     idUsuario: 0
   }
   articulosUsuario: ArticulosDTO[] = [];
@@ -41,7 +48,8 @@ export class ArticlesDetailComponent implements OnInit {
     private ventasService: VentasService,
     private router: Router,
     private auth: AuthService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private usuarioService: UsuariosService
   ) {
   }
 
@@ -53,6 +61,7 @@ export class ArticlesDetailComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.idArticulo = Number(params.get('id'));
       this.llamarArticulo();
+      this.dineroUsuario();
     });
   }
 
@@ -82,19 +91,53 @@ export class ArticlesDetailComponent implements OnInit {
       Swal.fire('Error', 'Debes iniciar sesión', 'error');
       return;
     } else {
-      this.ventasService.crearVenta(this.idArticulo).subscribe(
-        {
-          next: (resp) => {
-            Swal.fire('Compra hecha', `Usted compró: ${resp.data.titulo}`, 'success')
-            this.router.navigate(['/articulos']);
-          },
-          error: (resp) => {
-            Swal.fire('Fallo en la venta', `${resp.error.message}` || 'Error desconocido', 'error');
-          }
+      Swal.fire({
+        title: 'Antes de comprar',
+        text: `¿Esta seguro de comprar ${this.articulo.titulo}?`,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Comprar articulo',
+        cancelButtonText: 'Cancelar compra'
+      }).then((resultado) => {
+        if (resultado.isConfirmed) {
+          this.venta.idArticulo = this.articulo.idArticulo;
+          this.venta.idUsuario = this.idUsuario;
+          //Comparar dinero electronico con precio de articulo
+          if(this.saldo < this.articulo.precio){
+            Swal.fire('warning',`Su dinero no alcanza para comprar ${this.articulo.titulo}`,'warning');
+          }else{
+          this.ventasService.crearVenta(this.venta).subscribe(
+            {
+              next: (resp) => {
+                Swal.fire('Compra hecha', `Usted compró: ${this.articulo.titulo}`, 'success')
+                this.router.navigate(['/articulos']);
+              },
+              error: (resp) => {
+                Swal.fire('Fallo en la venta', `${resp.error.message}` || 'Error desconocido', 'error');
+              }
+            }
+          )
+        }} else if (resultado.isDismissed) {
+          return;
         }
-      )
+      });
     }
   }
+  dineroUsuario() {
+    this.usuarioService.obtenerUsuarioPorId(this.idUsuario).subscribe(
+      {
+        next: (resp) => {
+          this.saldo = resp.data.dinero_electronico;
+          this.cdr.markForCheck();
+          console.log(`${this.saldo}`)
+        },
+        error: (error) => {
+          console.log(`${error.error.message}`);
+        }
+      }
+    )
+  }
+
 
   //Función para validar si el usuario le pertenece la publicación
   //Para deshabilitar el botón comprar (no puede comprar su propio articulo)

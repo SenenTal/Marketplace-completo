@@ -5,7 +5,7 @@ DROP FUNCTION fn_obtener_ventas();
 DROP FUNCTION fn_obtener_ganancias_usuario(BIGINT);
 DROP FUNCTION fn_obtener_ventas_usuario(BIGINT);
 DROP FUNCTION fn_verificar_venta(BIGINT);
-
+DROP FUNCTION fn_compras_usuario(BIGINT);
 
 --Usuarios:
 DROP FUNCTION fn_hacer_admin(VARCHAR);
