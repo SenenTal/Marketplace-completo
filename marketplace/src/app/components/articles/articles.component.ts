@@ -20,7 +20,7 @@ export class ArticlesComponent implements OnInit {
   articulosFiltrados: ArticulosCategoriaDTO[] = [];
   articulos: ArticulosCategoriaDTO[] = [];
   disponible: string[] = [];
-  imageUrl = "http://localhost:8001/imagenes/";
+  imageUrl = "http://localhost:8000/imagenes/";
   filtroTitulo: string = '';
   filtroCategoria: string = '';
   filtro: FiltroDTO = {
@@ -42,7 +42,7 @@ export class ArticlesComponent implements OnInit {
         console.log('RESPUESTA COMPLETA:', respuesta);
         console.log('DATA:', respuesta.data);
         console.log('DATA LENGTH:', respuesta.data.length);
-
+        console.log(`ruta de imagenes: ${this.imageUrl}`)
         this.articulos = respuesta.data;
         this.page = 1;
 

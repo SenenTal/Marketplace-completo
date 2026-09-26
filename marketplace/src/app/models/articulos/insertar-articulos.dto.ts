@@ -1,4 +1,4 @@
-export interface InsertarArticuloDTO{
+export class InsertarArticuloDTO{
     titulo: String;
     descripcion: String;
     precio: number;

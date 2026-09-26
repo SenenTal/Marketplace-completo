@@ -14,7 +14,7 @@ import {newUser} from '../models/usuarios/newUser.dto';
 })
 export class UsuariosService {
 
-  private url = 'http://localhost:8003/usuarios'
+  private url = 'http://localhost:8002/usuarios'
 
   constructor(private http: HttpClient) { }
 

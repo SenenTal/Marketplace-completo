@@ -12,7 +12,7 @@ import { VentaDTO } from '../models/ventas/venta.dto';
   providedIn: 'root'
 })
 export class VentasService {
-  private url = 'http://localhost:8002/ventas'
+  private url = 'http://localhost:8001/ventas'
 
   constructor(private http:HttpClient) { }
 

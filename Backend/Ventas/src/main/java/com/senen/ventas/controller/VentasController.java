@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
  *
  * @author senen
  */
-@CrossOrigin(origins={"http://localhost:4000"})
+@CrossOrigin(origins={"http://localhost:4200"})
 @RestController
 @RequestMapping("/ventas")
 public class VentasController {

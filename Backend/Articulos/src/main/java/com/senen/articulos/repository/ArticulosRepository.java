@@ -30,8 +30,8 @@ public interface ArticulosRepository extends JpaRepository<Articulos, Long> {
     List<ArticulosCategoriaDTO> listarArticulos();
 
     @Transactional
-    @Query(value = "SELECT * FROM fn_crear_articulo(:titulo, :descripcion, "
-            + ":precio, :categoria, :imagen, :id_usuario)", nativeQuery = true)
+    @Query(value = "SELECT * FROM fn_crear_articulo(CAST(:titulo AS VARCHAR), CAST(:descripcion AS VARCHAR), "
+            + "CAST(:precio AS REAL), CAST(:categoria AS VARCHAR), CAST(:imagen AS VARCHAR), CAST(:id_usuario AS BIGINT))", nativeQuery = true)
     Articulos crearArticulo(@Param("titulo") String titulo, @Param("descripcion") String descripcion,
                             @Param("precio") float precio, @Param("categoria") String categoria,
                             @Param("imagen") String imagen,

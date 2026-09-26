@@ -19,7 +19,7 @@ export class UpdateArticleComponent implements OnInit {
   imagenPreview: string = '';
   idArticulo!: number;
   idUsuario!: number;
-  imageUrl = 'http://localhost:8001/imagenes/'
+  imageUrl = 'http://localhost:8000/imagenes/'
 
   articulo: ArticulosCategoriaDTO = {
     idArticulo: 0,

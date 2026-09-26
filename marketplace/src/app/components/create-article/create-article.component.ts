@@ -49,10 +49,9 @@ export class CreateArticleComponent implements OnInit {
   }
 
   crearArticulo() {
-    console.log(`${this.articulo.titulo}, ${this.articulo.descripcion}, ${this.articulo.categoria},
-      ${this.articulo.precio}, ${this.articulo.idUsuario}`)
+    console.log(`${this.articulo.titulo}, ${this.articulo.descripcion}, ${this.articulo.categoria}, ${this.articulo.precio}, ${this.articulo.idUsuario}, ${this.imagenPreview}`)
     if (!this.articulo.titulo || !this.articulo.descripcion || !this.articulo.categoria
-      || !this.articulo.precio
+      || !this.articulo.precio || !this.imagen
     ) {
       Swal.fire('Llenar información', 'Falta llenar datos en el formulario', 'info');
       return;

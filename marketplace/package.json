@@ -1,6 +1,6 @@
 {
   "name": "marketplace",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "scripts": {
     "ng": "ng",
     "Marketplace": "ng serve",
@@ -26,7 +26,7 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular/build:dev-server": "^22.1.6",
+    "@angular/build": "^22.1.6",
     "@angular/cli": "^22.1.6",
     "@angular/compiler-cli": "^22.1.4",
     "@types/jasmine": "~5.1.0",

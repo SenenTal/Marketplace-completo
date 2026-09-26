@@ -17,7 +17,7 @@ import {HttpParams} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ArticuloService {
-  private url = "http://localhost:8001/articulos"
+  private url = "http://localhost:8000/articulos"
 
   constructor(private http: HttpClient) {
   }

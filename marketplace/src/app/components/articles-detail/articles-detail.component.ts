@@ -38,7 +38,7 @@ export class ArticlesDetailComponent implements OnInit {
     idUsuario: 0
   }
   articulosUsuario: ArticulosDTO[] = [];
-  imageUrl = 'http://localhost:8001/imagenes'
+  imageUrl = 'http://localhost:8000/imagenes'
   imagen: string = '';
   esPropietario: boolean = false;
 
@@ -74,6 +74,7 @@ export class ArticlesDetailComponent implements OnInit {
         //Comparar si el id del usuario es igual a id_usuario de articulo
         this.esPropietario = this.articulo.idUsuario === this.idUsuario;
         console.log(`${this.articulo.titulo}`);
+        console.log(`Ruta para obtener la imagen: ${this.imageUrl}`)
         this.cdr.markForCheck();
       }, error: (error) => {
         Swal.fire(

@@ -4,7 +4,9 @@ CREATE TABLE usuarios(
 	usuario VARCHAR(255),
 	nickname VARCHAR(255),
 	contrasena VARCHAR(255),
-	role VARCHAR(255) NOT NULL
+	role VARCHAR(255) NOT NULL,
+	dinero_electronico REAL,
+	ubicacion VARCHAR(255)
 );
 --Crear Articulos
 CREATE TABLE articulos(
@@ -29,8 +31,29 @@ CREATE TABLE ventas(
 	cantidad REAL NOT NULL,
 	articulo_id BIGINT NOT NULL,
 	fecha_venta TIMESTAMP,
+	comprador_id BIGINT,
 	CONSTRAINT fk_venta_articulo
     FOREIGN KEY(articulo_id)
-    REFERENCES articulos(id)
-    ON DELETE CASCADE
+    REFERENCES articulos(id),
+	CONSTRAINT fk_venta_usuario
+	FOREIGN KEY(comprador_id)
+	REFERENCES usuarios(id)
 );
+
+--Mostar estructura de articulos
+SELECT column_name, data_type, is_nullable, column_default
+FROM information_schema.columns
+WHERE table_schema = 'public'
+AND table_name = 'articulos';
+
+--Mostar estructura de ventas
+SELECT column_name, data_type, is_nullable, column_default
+FROM information_schema.columns
+WHERE table_schema = 'public'
+AND table_name = 'ventas';
+
+--Mostar estructura de usuarios
+SELECT column_name, data_type, is_nullable, column_default
+FROM information_schema.columns
+WHERE table_schema = 'public'
+AND table_name = 'usuarios';

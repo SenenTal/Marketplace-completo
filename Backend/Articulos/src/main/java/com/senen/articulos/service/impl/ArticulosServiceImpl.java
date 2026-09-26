@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -30,6 +31,9 @@ public class ArticulosServiceImpl implements ArticulosService {
 
     @Autowired
     private ArticulosRepository repository;
+
+    @Value("${ruta.imagen}")
+    private String rutaImagen;
 
     @Override
     public ArticulosDTO obtenerArticulo(Long id) {
@@ -75,7 +79,7 @@ public class ArticulosServiceImpl implements ArticulosService {
             String archivo = imagen.getOriginalFilename();
             nombreArchivo = UUID.randomUUID() + "_" + (archivo != null ? archivo : "file");
 
-            Path carpeta = Paths.get("C:\\Users\\senen\\Documents\\Marketplace-completo\\Imagenes");
+            Path carpeta = Paths.get(rutaImagen);
             //Comprobación de la ruta
             if (!Files.exists(carpeta)) {
                 Files.createDirectories(carpeta);
@@ -131,13 +135,13 @@ public class ArticulosServiceImpl implements ArticulosService {
     public Articulos crearArticulo(InsertarArticulosDTO newArticulo, MultipartFile imagen) {
         try {
             String nombreArchivo = null;
-            if (imagen.isEmpty() || imagen == null) {
+            if (imagen == null || imagen.isEmpty() ) {
                 throw new RuntimeException("Archivo vacío");
             }
             String archivo = imagen.getOriginalFilename();
             nombreArchivo = UUID.randomUUID() + "_" + (archivo != null ? archivo : "file");
             //C:\Users\senen\Documents\ExamenTecnico\Imagenes
-            Path carpeta = Paths.get("C:\\Users\\senen\\Documents\\Marketplace-completo\\Imagenes");
+            Path carpeta = Paths.get(rutaImagen);
             //Comprobación de la ruta
             if (!Files.exists(carpeta)) {
                 Files.createDirectories(carpeta);

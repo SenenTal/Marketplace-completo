@@ -79,3 +79,24 @@ Y los nombres de las imagenes que se obtienen de la base solamente obtiene las f
 -Una imagen / contenedor para el proyecto de Angular
 -Una imagen para el nuevo servicio para peticiones keycloak
 -
+-Hay que trabajar con Docker, ya pude correr angular con el contenedor nginx. Y ya agregué el
+proyecto a docker-compose. Ahora falta la comunicación de los microservicios con angular utilizando
+docker-compose. Mañana.
+
+
+
+
+
+----Buenas prácticas----
+--En Angular las uri las tengo definidas de esta manera: 
+-Opciones de usuario: localhost:4000/opciones/3
+-Detalle de articulo: localhost:4000/articulo/5
+-Creacion de articulo: localhost:4000/crearArticulo/3
+-Actualizar usuario: localhost:4000/actualizarArticulo/13
+--Utiliza un id. Y siento que deberia estar oculto. Y poder verificar el id de usuario o el id
+del articulo sin mostrarlo en la uri. 
+
+--Otra observación: Quiero que los elementos y toda la página cargue completo;
+lo que pasa es que carga la página pero los elementos y registros que obtiene del backend.
+Se tarda 1-2 segundos. Me gustaria que cargara cuando se complementen backend y frontend para mostrar
+la página.

@@ -20,7 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
  *
  * @author senen
  */
-@CrossOrigin(origins={"http://localhost:4000"})
+@CrossOrigin(origins={"http://localhost:4200"})
 @RestController
 @RequestMapping("/articulos")
 public class ArticulosController {
@@ -76,7 +76,7 @@ public class ArticulosController {
     }
 
     @PostMapping()
-    public ResponseEntity<ApiResponse<?>> crearArticulo(@RequestPart("articulo") @Valid InsertarArticulosDTO newArticulo,
+    public ResponseEntity<ApiResponse<?>> crearArticulo(@RequestPart("newArticulo") @Valid InsertarArticulosDTO newArticulo,
             @RequestPart("imagen") MultipartFile imagen ) {
         Articulos nuevoArticulo = service.crearArticulo(newArticulo, imagen);
         return ResponseEntity.status(HttpStatus.OK).body(
