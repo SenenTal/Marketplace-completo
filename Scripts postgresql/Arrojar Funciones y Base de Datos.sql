@@ -44,7 +44,11 @@ DROP TABLE articulos;
 DROP TABLE usuarios;
 DROP TABLE ventas;
 
---Truncar las bases de datos
-TRUNCATE TABLE articulos CASCADE;
-TRUNCATE TABLE ventas CASCADE;
-TRUNCATE TABLE usuarios;
+--Arrojar todos los registros de articulos
+TRUNCATE TABLE articulos RESTART IDENTITY CASCADE;
+
+--Arrojar todos los registros de usuarios
+TRUNCATE TABLE usuarios RESTART IDENTITY CASCADE;
+
+--Arrojar todos los registros de ventas
+TRUNCATE TABLE ventas RESTART IDENTITY;

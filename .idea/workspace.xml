@@ -4,52 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d50828bc-3b92-4d68-9948-9c9b03de604f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/resources/application-local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/Usuarios/src/main/resources/application-local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/Ventas/src/main/resources/application-local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/controller/ArticulosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/repository/ArticulosRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/repository/ArticulosRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/service/impl/ArticulosServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/webconfig/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/src/main/java/com/senen/articulos/webconfig/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Articulos/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/Articulos-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/Articulos-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/Articulos-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/Articulos-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/controller/ArticulosController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/controller/ArticulosController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/repository/ArticulosRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/repository/ArticulosRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/service/impl/ArticulosServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/service/impl/ArticulosServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/webconfig/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Articulos/target/classes/com/senen/articulos/webconfig/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/src/main/java/com/senen/usuarios/controller/UsuariosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Usuarios/src/main/java/com/senen/usuarios/controller/UsuariosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/target/Usuarios-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Usuarios/target/Usuarios-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/target/Usuarios-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Usuarios/target/Usuarios-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Usuarios/target/classes/com/senen/usuarios/controller/UsuariosController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Usuarios/target/classes/com/senen/usuarios/controller/UsuariosController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/controller/VentasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/src/main/java/com/senen/ventas/controller/VentasController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Ventas/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/Ventas-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/Ventas-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/Ventas-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/Ventas-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/controller/VentasController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Ventas/target/classes/com/senen/ventas/controller/VentasController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imagenes/0a885fdd-1dd8-4be7-b1eb-d824337ddc46_Erza scarlet bunny.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Instrucciones.md" beforeDir="false" afterPath="$PROJECT_DIR$/Instrucciones.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts postgresql/Crear Bases de Datos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts postgresql/Crear Bases de Datos.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts postgresql/Verificar estructura de base de datos Marketplace.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts postgresql/Verificar estructura de base de datos Marketplace.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/articles-detail/articles-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/articles-detail/articles-detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/articles/articles.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/articles/articles.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/create-article/create-article.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/create-article/create-article.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/components/update-article/update-article.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/components/update-article/update-article.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/models/articulos/insertar-articulos.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/models/articulos/insertar-articulos.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/services/articulo.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/services/articulo.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/services/usuarios.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/services/usuarios.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/src/app/services/ventas.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/src/app/services/ventas.service.ts" afterDir="false" />
-    </list>
+    <list default="true" id="d50828bc-3b92-4d68-9948-9c9b03de604f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
