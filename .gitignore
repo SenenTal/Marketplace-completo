@@ -1,2 +1,5 @@
 # Ignora la carpeta node_modules
 marketplace/node_modules
+Backend/Articulos/target
+Backend/Usuarios/target
+Backend/Ventas/target

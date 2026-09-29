@@ -100,3 +100,23 @@ del articulo sin mostrarlo en la uri.
 lo que pasa es que carga la página pero los elementos y registros que obtiene del backend.
 Se tarda 1-2 segundos. Me gustaria que cargara cuando se complementen backend y frontend para mostrar
 la página.
+
+--Ya pude realizar la práctica: Subi los cambios a un repositorio git. Lo baje en otra parte.
+Ahí se debe compilar los proyectos: 'npm i' en el proyecto angular para bajar sus dependencias
+y crear la carpeta 'node_modules'. Y utilizar 'npm run build'
+para ver si compila correctamente el proyecto de angular.
+Después crear los archivos jar de cada microeservicio (articulos, usuarios y ventas) con
+'mvn clean package'. Asi se podrá compilar las imagenes de docker para implementar cada
+contenedor. Ya viene configurado cada Dockerfile para cada aplicación. Y el archivo 
+docker-compose.yml ya viene configurado. Con la base de datos. 
+--Ahi después de la compilación. Hay que compilar las imagenes docker.
+Y después correr los contenedores: primero la base de datos con el gestor de la base 
+(postgres_db y pgadmin4). Luego correr los microservicios (articulos, usuarios y ventas).
+Al final correr la aplicación angular (angular).
+
+--npm i
+--npm run build
+--mvn clean package
+--docker compose build / docker-compose -f "C:\Users\tunombre\Documents\Marketplace-completo\docker-compose.yml" build
+--docker compose up -d "servicio"
+--docker compose down
